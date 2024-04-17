@@ -28,13 +28,15 @@ After that, the program will infinitely print out the value of the hourly jackpo
 
 <h2>How it's done:</h2>
 <h3>Step 1 - Analyzing the webpage</h3>
-The webpage https://www.888casino.com/jackpots/ has been analysed and inspeced. The page html code as well as the network connectivity have been inspected in order to identify the request that is holding the value for »hourly jackpot«. <br>
-The identified reocouring GET request to the url: https://feed-casino888.redtiger.cash/jackpots?jackpotId=williamHill&currency=usd <br><br>
-It has been further inspected with Insomnia REST client to analyse the data: <br><br>
+The webpage https://www.888casino.com/jackpots/ has been analyzed and inspected. The page HTML code, as well as the network connectivity, have been inspected to identify the request that is holding the value for the »hourly jackpot«. <br>
+The identified reoccurring GET request to the URL: https://feed-casino888.redtiger.cash/jackpots?jackpotId=williamHill&currency=usd <br><br>
+It has been further inspected with the Insomnia REST client to analyze the data: <br><br>
 
 ![Screenshot 2024-04-17 at 18 03 10](https://github.com/filiph-r/Java_888casino_Scraper/assets/48492507/cf4c7013-94a7-40c8-9d63-d48fdf0d1afe)<br><br>
 
-One conclusion was that there are multiple currencies supported. In order to identify all supported courencies the firts network request to the page was inspected with is the page document download for the url https://de.888casino.com/jackpots/. By searching trough the response for "Currency" a list of currencies maped to countries was found. This information was used to include only the supported currencies in this program.
+One conclusion was that there are multiple currencies supported. To identify all supported currencies the first network request to the page was inspected with the page document download for the URL https://de.888casino.com/jackpots/. By searching through the response for "Currency" a list of currencies mapped to countries was found. This information was used to include only the supported currencies in this program.
+
+
 
 
 
