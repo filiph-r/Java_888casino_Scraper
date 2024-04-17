@@ -9,8 +9,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-import static constants.PropertyConstants.REQUEST_URL;
-import static constants.PropertyConstants.JACKPOT_NAME;
+import static constants.PropertyConstants.*;
+
 
 public class HourlyJackpotScraperService
 {
@@ -30,6 +30,10 @@ public class HourlyJackpotScraperService
 
 			Gson gson = new Gson();
 			JackpotResponse jackpotResponse = gson.fromJson(responseBody, JackpotResponse.class);
+			if (!jackpotResponse.isSuccess())
+			{
+				return MESSAGE_NOT_FOUND;
+			}
 
 			for (JackpotResponse.Pot pot : jackpotResponse.getResult().getJackpots().getPots())
 			{
@@ -44,6 +48,6 @@ public class HourlyJackpotScraperService
 			e.printStackTrace();
 		}
 
-		return "Amount for Hourly Drop Jackpot not found";
+		return MESSAGE_NOT_FOUND;
 	}
 }
