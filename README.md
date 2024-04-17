@@ -12,7 +12,7 @@ There are many ways to access this data. One is to observe the HTML and just gat
 
 <h2>Executable:</h2>
 
-Desktop .jar file -> [here](https://github.com/filiph-r/Java_888casino_Scraper/raw/main/executables/888casino_Scraper.jar) (Tested with Java 17)<br>
+888casino_Scraper.jar file -> [here](https://github.com/filiph-r/Java_888casino_Scraper/raw/main/executables/888casino_Scraper.jar) (Tested with Java 17)<br>
 
 <h2>How to use:</h2>
 Download and execute the 888casino_Scraper.jar file in the terminal<br>
