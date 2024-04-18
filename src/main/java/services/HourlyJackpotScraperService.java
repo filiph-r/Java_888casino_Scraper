@@ -8,6 +8,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.List;
+import java.util.Objects;
 
 import static constants.PropertyConstants.*;
 
@@ -34,8 +36,10 @@ public class HourlyJackpotScraperService
 			{
 				return MESSAGE_NOT_FOUND;
 			}
+			final List<JackpotResponse.Pot> pots = jackpotResponse.getResult().getJackpots().getPots();
+			ValidationService.validateNotNull(pots);
 
-			for (JackpotResponse.Pot pot : jackpotResponse.getResult().getJackpots().getPots())
+			for (JackpotResponse.Pot pot : pots)
 			{
 				if (JACKPOT_NAME.equals(pot.getName()))
 				{
@@ -43,7 +47,7 @@ public class HourlyJackpotScraperService
 				}
 			}
 		}
-		catch (IOException | InterruptedException e)
+		catch (IOException | InterruptedException | NullPointerException e)
 		{
 			e.printStackTrace();
 		}

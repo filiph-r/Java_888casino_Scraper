@@ -1,4 +1,5 @@
 import services.HourlyJackpotScraperService;
+import services.ValidationService;
 
 import java.util.Scanner;
 import java.util.Timer;
@@ -24,6 +25,7 @@ public class Main
 			try
 			{
 				duration = Integer.parseInt(args[0]) * 1000;
+				ValidationService.validateNumber(duration);
 			}
 			catch (NumberFormatException e)
 			{
